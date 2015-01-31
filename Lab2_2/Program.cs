@@ -27,18 +27,26 @@ namespace Lab2_2
 
         static void Part2()
         {
-            StreamReader sr = File.OpenText(@"C:\Users\bsnbk2\Desktop\new.txt");
-
             try
             {
-                Console.WriteLine(sr.ReadToEnd());
+                StreamReader sr = File.OpenText(@"C:\Users\bsnbk2\Desktop\new.txt");
+
+                try
+                {
+                    Console.WriteLine(sr.ReadToEnd());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    sr.Close();
+                }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-            }
-            finally
-            {
-                sr.Close();
+
             }
         }
     }
