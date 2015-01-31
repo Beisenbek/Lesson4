@@ -31,16 +31,19 @@ namespace Lab2_1
         static void FSW()
         {
             fsw.EnableRaisingEvents = true;
-            fsw.NotifyFilter = NotifyFilters.Size|NotifyFilters.FileName;
+            fsw.NotifyFilter = NotifyFilters.Size;
+            
+
             fsw.Changed += fsw_Changed;
             fsw.WaitForChanged(WatcherChangeTypes.Changed);
         }
 
         static void fsw_Changed(object sender, FileSystemEventArgs e)
         {
+
             try
             {
-                Console.WriteLine("Smthing changed!");
+                Console.WriteLine("Somthing changed!");
             }
             finally
             {
